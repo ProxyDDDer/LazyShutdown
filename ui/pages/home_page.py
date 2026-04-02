@@ -1,4 +1,5 @@
 import sys
+from xml.etree.ElementTree import tostring
 
 from PySide6.QtWidgets import QMainWindow, QPushButton, QWidget, QLineEdit, QHBoxLayout, QVBoxLayout, QMessageBox, \
     QComboBox, QLabel
@@ -20,7 +21,7 @@ class HomePage(QMainWindow):
 
         self.setWindowTitle(f"LazyShutdown {get_version()}")
         self.setMinimumSize(400, 0)
-        self.setFixedHeight(110)
+        self.setFixedHeight(130)
 
         # Input value
         self.input_field = QLineEdit()
@@ -39,8 +40,9 @@ class HomePage(QMainWindow):
         self.clear_timer_button.pressed.connect(self.on_clear_timer_button)
 
         self.author_label = QLabel()
-        self.author_label.setText("Powered by\n"
-                                  "RED IGLA")
+        self.author_label.setText(f"Powered by\n"
+                                  "RED IGLA\n"
+                                  + str(get_version()))
         self.author_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Line input layout (horizontal)
