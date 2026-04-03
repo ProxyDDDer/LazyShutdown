@@ -8,7 +8,7 @@
 
 * 📅 **Flexibility:** Support for a wide range of units of measurement (from seconds to days)
 * 🧹 **Clearing:** Cancel all active timers with one button
-
+* 🧸 **Fully portable:** Just download an `.exe` file and run!
 ---
 
 ## 🛠️ Installation
