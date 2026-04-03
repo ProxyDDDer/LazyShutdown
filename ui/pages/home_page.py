@@ -100,7 +100,10 @@ class HomePage(QMainWindow):
         total_seconds = int(input_value * time_type_enum[time_type])
         print(f"Total seconds: {total_seconds}")
 
-        result = subprocess.run(["shutdown", "/s", "/t", str(total_seconds)], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+        result = subprocess.run(["shutdown", "/s", "/t", str(total_seconds)],
+                                stderr=subprocess.DEVNULL,
+                                stdout=subprocess.DEVNULL,
+                                creationflags=subprocess.CREATE_NO_WINDOW)
         result_return_code = result.returncode
         match result_return_code:
             case 0:
@@ -141,7 +144,10 @@ class HomePage(QMainWindow):
     Emm, i think i have nothing to say. Just clear.
     """
     def on_clear_timer_button(self):
-        result = subprocess.run(["shutdown", "/a"], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+        result = subprocess.run(["shutdown", "/a"],
+                                stderr=subprocess.DEVNULL,
+                                stdout=subprocess.DEVNULL,
+                                creationflags=subprocess.CREATE_NO_WINDOW)
         result_return_code = result.returncode
         match result_return_code:
             case 0:
