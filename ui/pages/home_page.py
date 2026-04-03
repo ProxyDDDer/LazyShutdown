@@ -1,5 +1,4 @@
 import sys
-from xml.etree.ElementTree import tostring
 
 from PySide6.QtWidgets import QMainWindow, QPushButton, QWidget, QLineEdit, QHBoxLayout, QVBoxLayout, QMessageBox, \
     QComboBox, QLabel
@@ -19,7 +18,7 @@ class HomePage(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle(f"LazyShutdown {get_version()}")
+        self.setWindowTitle(f"LazyShutdown {get_version(short=True)}")
         self.setMinimumSize(400, 0)
         self.setFixedHeight(130)
 
